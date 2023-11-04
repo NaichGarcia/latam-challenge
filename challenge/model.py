@@ -102,13 +102,6 @@ class DelayModel:
             random_state = 111
         )
 
-        """
-        features = pd.concat([
-            pd.get_dummies(training_data['OPERA'], prefix = 'OPERA'),
-            pd.get_dummies(training_data['TIPOVUELO'], prefix = 'TIPOVUELO'), 
-            pd.get_dummies(training_data['MES'], prefix = 'MES')], 
-            axis = 1
-        )"""
         features = self.get_dummies(training_data, ['OPERA', 'TIPOVUELO', 'MES'])
 
         # Top 10 features according to the DS
