@@ -89,28 +89,27 @@ class DelayModel:
             or
             pd.DataFrame: features.
         """
-        columns = ['OPERA', 'MES', 'TIPOVUELO', 'SIGLADES', 'DIANOM']
-        if(target_column == "delay"):        
-            columns.append("delay")
-            
-            # Get "delay" values
-            data['min_diff'] = data.apply(CustomFeature.get_min_diff, axis = 1)
-            threshold_in_minutes = 15
-            data['delay'] = np.where(data['min_diff'] > threshold_in_minutes, 1, 0)
 
+        # Get "delay" values
+        data['min_diff'] = data.apply(CustomFeature.get_min_diff, axis = 1)
+ 
+        threshold_in_minutes = 15
+        data['delay'] = np.where(data['min_diff'] > threshold_in_minutes, 1, 0)
 
         # Process features
         training_data = shuffle(
-            data[columns], 
+            data[['OPERA', 'MES', 'TIPOVUELO', 'SIGLADES', 'DIANOM', 'delay']], 
             random_state = 111
         )
 
+        """
         features = pd.concat([
             pd.get_dummies(training_data['OPERA'], prefix = 'OPERA'),
             pd.get_dummies(training_data['TIPOVUELO'], prefix = 'TIPOVUELO'), 
             pd.get_dummies(training_data['MES'], prefix = 'MES')], 
             axis = 1
-        )
+        )"""
+        features = self.get_dummies(training_data, ['OPERA', 'TIPOVUELO', 'MES'])
 
         # Top 10 features according to the DS
         top_10_features = [
@@ -192,3 +191,27 @@ class DelayModel:
         predicted_targets = predicted_targets.tolist()
 
         return predicted_targets
+    
+    def get_dummies(
+        self,
+        data: pd.DataFrame,
+        features_names: list
+    ) -> pd.DataFrame:
+        """
+        Get specific features from a given DataFrame.
+
+        Args:
+            data (pd.DataFrame): data to predict.
+            features_names (list): columns to get dummies from.
+        
+        Returns:
+            pd.DataFrame: processed data.
+        """
+
+        dummies = [pd.get_dummies(data[feature], prefix = feature) for feature in features_names]
+        features = pd.concat(
+            dummies,
+            axis = 1
+        )
+
+        return features
