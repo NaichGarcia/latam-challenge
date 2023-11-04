@@ -6,8 +6,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.utils import shuffle
 from sklearn.metrics import confusion_matrix, classification_report
 
-from sklearn.linear_model import LogisticRegression
-
 import xgboost as xgb
 
 from typing import Tuple, Union, List
@@ -91,16 +89,19 @@ class DelayModel:
             or
             pd.DataFrame: features.
         """
+        columns = ['OPERA', 'MES', 'TIPOVUELO', 'SIGLADES', 'DIANOM']
+        if(target_column == "delay"):        
+            columns.append("delay")
+            
+            # Get "delay" values
+            data['min_diff'] = data.apply(CustomFeature.get_min_diff, axis = 1)
+            threshold_in_minutes = 15
+            data['delay'] = np.where(data['min_diff'] > threshold_in_minutes, 1, 0)
 
-        # Get "delay" values
-        data['min_diff'] = data.apply(CustomFeature.get_min_diff, axis = 1)
- 
-        threshold_in_minutes = 15
-        data['delay'] = np.where(data['min_diff'] > threshold_in_minutes, 1, 0)
 
         # Process features
         training_data = shuffle(
-            data[['OPERA', 'MES', 'TIPOVUELO', 'SIGLADES', 'DIANOM', 'delay']], 
+            data[columns], 
             random_state = 111
         )
 
