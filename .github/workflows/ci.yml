@@ -24,6 +24,9 @@ jobs:
     - name: Update numpy
       run: pip install numpy --upgrade
 
+    - name: Install requirements for tests
+      run: pip install --upgrade -r requirements-test.txt
+
     - name: Run model test
       run: make model-test
       
