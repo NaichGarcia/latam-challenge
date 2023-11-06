@@ -1,0 +1,38 @@
+name: 'Continuous Delivery'
+
+on:
+  workflow_run:
+    workflows: ["Continuous Integration"]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.11
+
+    - name: Install requirements
+      run: pip install --upgrade -r requirements.txt
+
+    - name: Update numpy
+      run: pip install numpy --upgrade
+
+    - name: Set up GCP creds
+      run: gcloud auth activate-service-account --key-file=creds.json
+
+    - name: Set GCP project
+      run: gcloud config set project latam-challenge-404220
+
+    - name: Apply deployment
+      run: kubectl apply -f deployment.yaml
+
+    - name: Apply servicio
+      run: kubectl apply -f servicio.yaml

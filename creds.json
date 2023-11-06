@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "latam-challenge-404220",
+  "private_key_id": "d6edb9254986e2477a4fc62dcffa7c00ec57d7c5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCV5VZNoF+uBolF\ns0OUC+pAlfrnzNhq54b081AjehXjeYq3VzexbGBz/eOoYm6d/GwzwXHCfRp52mVU\nM7dPDSpn1o3uMhDexZJiZIPshtirQ+x62jTl5YFZsn87hrrudNDJ3K+Dcbrpt53B\nNwgeSuGWuDkq3NfVlW/WXZqOKQVBGAvEPO4aBlmpe8jJna+0MrWi5tqdagMxeMha\nTcG/Znx7vJHlakxMWdTV1ZC+9NBLHlEzmdLi5EeYwwApZW2z7eZ8yxaFVqy5GzJ9\nFXfg0BwM/dW6qa/Ou9LqmZ+1eXIgOnL+cUuSw0M742vZWV4x6DzzosySySgQKBU3\n2scIASCPAgMBAAECggEABfDkhkgccrPMnggYXhZIzw2Ct8w9KaOKjEvWecl9c5oe\nHt0klnIisoY2Dzbzhmx6R2Tb4ub9dSXsTTWNhuMRMrNkxbOTSpkPD7pHJklD7inP\nhiD+5ru9cDYsZ8oTv56+pbmK9U09KMU/yegp+LVkEoqzrVi6bzswhxEHrqm+jRFc\n2TEVwHMlfOysyyBfRyOE/Vt+hhUfPNcnFZi7QflArid7HT9s1wi7FH9KDkqfkAMY\nbNEfjrf3K27Vb/S1EhRMDwVuBw6JK9Lp0tYwAt3lW8SY/ou7QwzlbqAtrgQuxwLV\nD99CxC/iGAu7bvNWyccf2I5REtkzj0/RkVBlbzr2eQKBgQDSAM2cW2worBK2Kncb\nQEhWgEAlCmtmYlE2mALlVe2MchPKMknhrIcLIvUENZ93U6G/5dhL08uJA2bED2qa\nP3txvdgEYTElOBncroDrvZEFfGn73pmTPrIcrH4WRo+oz4ADXbMqNisMguJe5xXO\n1qM80Znw6zFMxKqU4UJLOi2DRwKBgQC2ujn05qzsVqMZ1fsgQPtcJDrNRPkP0/6g\na1Wq0WYlwpWVnE6U3BVmk/F+1ESO3RtyUQDpYmx6o41UHuSyjt+LVUxbql/A7ULP\nsksjUVSmV53Hg5YeKTpmgiZZEnsgw9TK65B8L7yaRYNksVZ1kpF3z9KXCw8FLhVK\nN8BGntNMeQKBgCVg8TgAacr/fcEg49xc38NNxp0RMrahj1UJT5KkbcjO0UjvFIlv\nnQXVbgkWxlCF+Udf0NUGWLcFfPguykm0PPOs19NHvWijiK7n/Jh5QGPalj63i1xT\nD37dEQBEBPQGIwH2XpqH07fBYCuGNDKBr8J2iFECe97vLnGbeqJLM6inAoGAEVkQ\n041q8W0wQu2rz94bfx35by+TLcuEqxpFodgLiJ42sWOLmlpitcBp9w6UC7Q2PN4v\n5fhwMByC+G+Oat1hn8rTWwiL2rcr1qgotgusq7Y5xo1ZnTdw0fadSWuVwQCWnUVM\nDF5D26mp1c94U+U8ZlGWvrxQCr/bSZaNbKb7jJECgYBs6IYUrTERbUzrdSJ+x77m\nsp+ZyZsJ01HU+0oKUR/mg17zHHyHOX0Zj5oXr4BiuZKMvok9ISaJKK3dBD3DT8/7\nnQmAjujZcsu3x/RjmXQf0Z/LOkiRqk4NR9S7WPt+RQb6sBC+Biwo7yaflSo3P+bz\nB2CddDQJ9C8a720Bh/lQwQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "latam-challenge-deploy@latam-challenge-404220.iam.gserviceaccount.com",
+  "client_id": "102038822776517570933",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/latam-challenge-deploy%40latam-challenge-404220.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
