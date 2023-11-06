@@ -11,7 +11,8 @@ Se encontraron bugs mínimos en Jupyter Notebook. Se agregaron los parámetros "
 realizados por el DS, si bien no se usan todos, me parece útil tenerlos a mano en caso de que ocurra algún cambio.
 - El modelo XGB fué escogido debido a que fué el único que pasó los requerimientos de las pruebas.
 - En el método setUp de la clase TestModel en test_model.py se cambió la ruta del archivo debido a que no
-se lograba encontrar, le asigné la ruta exacta del archivo al argumento filepath_or_buffer. **Este cambio no fue subido para no entorpecer las pruebas internas.**
+se lograba encontrar, le asigné la siguiente ruta: "./data/data.csv"
+
 - en model.py, en la línea 79 se cambió el tipo de dato retornado debido a error en las pruebas (pasó de "Union()" a "Union[]"):
     -> Union[Tuple[pd.DataFrame, pd.DataFrame], pd.DataFrame]
 
